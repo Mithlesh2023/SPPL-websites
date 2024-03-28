@@ -1,0 +1,60 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+  
+<form class="form">
+    <p class="title">HELP SLIP </p>
+    <p class="message">Fill details is problem solved or not.</p>
+    <label>
+        <input required="" placeholder="" type="text" class="input">
+        <span>Help slip code</span>
+    </label>
+
+    <label>
+        <select class="input" name="solution" required>
+          <!-- <option value="" disabled selected hidden>Select option</option> -->
+          <option value="Go with 1st best solution">Go with 1st best solution</option>
+          <option value="Go with 2nd best solution">Go with 2nd best solution</option>
+          <option value="Go with 3rd best solution">Go with 3rd best solution</option>
+          <option value="Cancelled">Cancelled</option>
+          <option value="Your opinion">Your opinion</option>
+        </select>
+        <span>Solution type</span>
+    </label>
+            
+    <label>
+        <input required="" placeholder="" type="text" class="input">
+        <span>Suggest your openion</span>
+    </label> 
+    
+    <label>
+        <span>Status</span>
+        <label class="cyberpunk-checkbox-label">
+          <input type="checkbox" class="cyberpunk-checkbox" name="status" value="Resolved">
+          Resolved
+        </label>
+        <label class="cyberpunk-checkbox-label">
+          <input type="checkbox" class="cyberpunk-checkbox" name="status" value="Assigned to senior person">
+          Assigned to senior person
+        </label>
+    </label>
+        
+    <label>
+        <input required="" placeholder="" type="text" class="input">
+        <span>Remark</span>
+    </label>
+    <button class="submit">Submit</button>
+    <script>
+        const statusCheckboxes = document.querySelectorAll('input[name="status"]');
+      
+        statusCheckboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', () => {
+            statusCheckboxes.forEach(otherCheckbox => {
+              if (otherCheckbox !== checkbox && otherCheckbox.checked) {
+                otherCheckbox.checked = false;
+              }
+            });
+          });
+        });
+      </script>
+</form>
